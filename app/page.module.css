@@ -68,7 +68,7 @@
   border: 0;
   border-radius: 8px;
   background: var(--accent);
-  color: #ffffff;
+  color: var(--on-accent);
   font-size: 16px;
   font-weight: 600;
   white-space: nowrap;
@@ -76,5 +76,31 @@
 }
 
 .mine {
+  font-weight: 600;
+}
+
+.notice {
+  padding: 12px 20px;
+  border: 1px solid var(--danger);
+  border-radius: 8px;
+  background: var(--danger-surface);
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.now[data-stale="true"] .current,
+.next[data-stale="true"] .chip {
+  color: var(--stale);
+}
+
+.empty {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+}
+
+.error {
+  color: var(--danger);
   font-weight: 600;
 }

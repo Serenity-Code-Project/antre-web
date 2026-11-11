@@ -5,6 +5,10 @@
   --muted: #5c5648;
   --line: #d4cebf;
   --accent: #4f46e5;
+  --on-accent: #ffffff;
+  --danger: #b42318;
+  --danger-surface: #fdecea;
+  --stale: #736d60;
 }
 
 * {

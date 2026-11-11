@@ -17,12 +17,16 @@ export interface Ticket {
   createdAt: string;
 }
 
+/* A reply that is not 2xx is a failure, the same as no reply at all. */
+async function readJson<T>(response: Response): Promise<T> {
+  if (!response.ok) throw new Error(`antre-api answered ${response.status}`);
+  return (await response.json()) as T;
+}
+
 export async function readState(): Promise<QueueState> {
-  const response = await fetch(`${API_URL}/state`, { cache: "no-store" });
-  return (await response.json()) as QueueState;
+  return readJson(await fetch(`${API_URL}/state`, { cache: "no-store" }));
 }
 
 export async function takeNumber(): Promise<Ticket> {
-  const response = await fetch(`${API_URL}/tickets`, { method: "POST" });
-  return (await response.json()) as Ticket;
+  return readJson(await fetch(`${API_URL}/tickets`, { method: "POST" }));
 }
