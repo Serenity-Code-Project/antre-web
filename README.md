@@ -35,7 +35,7 @@ imperfect on purpose. You find the gaps and add the missing parts during the cla
 ## Branches
 
 `main` is the starter. Answer keys for the exercises that change this repository are added as
-`kunci/...` branches, the same way as in antre-api.
+`answer/...` branches, the same way as in antre-api.
 
 ## Licence
 
